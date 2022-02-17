@@ -1,4 +1,4 @@
-package com.silence;
+package com.silence.base.lession1;
 
 /**
  * 打印32位整数 int 的二进制形式

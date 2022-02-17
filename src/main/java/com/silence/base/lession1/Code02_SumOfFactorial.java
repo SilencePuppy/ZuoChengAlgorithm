@@ -1,4 +1,4 @@
-package com.silence;
+package com.silence.base.lession1;
 
 /**
  * 阶乘累加和

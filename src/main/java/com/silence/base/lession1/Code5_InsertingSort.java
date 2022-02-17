@@ -1,25 +1,33 @@
-package com.silence;
+package com.silence.base.lession1;
 
 /**
+ * 插入
  * @author lixiaobing
- * @Classname Code3_SelectionSort
- * @date 2022-02-16 10:17
+ * @Classname Code5_InsertingSort
+ * @date 2022-02-17 9:50
  */
-public class Code3_SelectionSort {
+public class Code5_InsertingSort {
+
 
     private static void sort(int[] arr){
         if (arr == null || arr.length < 2) {
             return;
         }
 
-        for (int i = 0; i < arr.length; i++) {
-            int minIndex = i;
-            for (int j = i+1; j < arr.length; j++) {
-                minIndex = arr[minIndex]<= arr[j]?minIndex:j;
+        for (int i = 1; i < arr.length; i++) {
+            int j = i-1;
+
+            for (; j > 0&&arr[j]>arr[i]; j--);
+
+            if (j != i - 1) {
+                int temp = arr[i];
+                System.arraycopy(arr,j+1,arr,j+2,i-j-1);
+                arr[j+1] = temp;
             }
-            swap(arr,i,minIndex);
+
         }
     }
+
 
     private static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
